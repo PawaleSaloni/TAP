@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Product Catalog</title>
+         <!--Step 1 : link jQuery file avaialble remotely-->
+         <script src="scripts/jquery.min.js"></script>
+    </head>
+ 
+    <body>
+        <button>Send Data</button>
+        <script>
+
+
+        $(document).ready(function(){
+            $("button").click(function(){
+                
+                //send data to rest api
+                //http://localhost:9898/api/register
+
+                var newCustomer={
+                    "id":76,
+                    "firstname":"Shivani",
+                    "lastname":"Wagh",
+                    "email":"shivani.wagh@gamil.com",
+                    "contactnumber":"9881745784"
+                };
+
+                let url="/api/register";
+                $.post(url,newCustomer,function(){
+                    console.log("data is posted to server.");
+                })
+            });
+        });
+        </script>
+ 
+    </body>
+</html>

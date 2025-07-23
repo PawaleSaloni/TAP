@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Transflower Web</Title>
+    </head>
+    <body>
+        <h1>Flower Details </h1>
+        <a href="/">Home</a> | <a href="/about.html">About us</a> |<a href="/contact.html">Contact</a>|<a href="/login.html">Sign In</a>
+      <hr/>
+
+
+         <iframe src="https://ravitambade.wordpress.com/author/ravitambade" 
+                 title="Ravi Tambade">
+        </iframe>
+
+    
+         
+        <input  id="username" type="text" value="Ravi Tambade"/>
+        <br/>
+        <input  id="location" type="text" value="Pune"/>
+        <br/>
+        <button onClick="onButtonClick()">Show Data</button>
+        <hr/>
+        
+        <p id="paraUserName">User Name</p>
+        <p id="paraLocation">Location</p>
+        
+        <script>
+                var onButtonClick=function(){
+                    //getting reference of element whose id is username
+                    var txtUserName=document.getElementById("username");
+                    var dataUserName=txtUserName.value;
+
+                    var txtLocation=document.getElementById("location");
+                    var dataLocation=txtLocation.value;
+                    //get the reference of element whose id is para1
+
+                    var elementUserName=document.getElementById("paraUserName");
+                    elementUserName.innerHTML=dataUserName; 
+
+                    var elementLocation=document.getElementById("paraLocation");
+                    elementLocation.innerHTML=dataLocation;   
+                    
+                    // DOM API :
+                    // Document Object Model
+                    // Application Programmers Interface ( built in functions  by DOM)
+
+                    //document.createElement----------will create new html element
+                    //document.removeChild------------will remove existing html element
+                    //document.appendChild------------will append child to html document
+                    //document.replaceChild
+                    //document.write
+
+                }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graphics Programming</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+       <h1>Drawing</h1>
+       <hr/>
+       <p id="demo">Mouse Position</p>
+       <hr/>
+
+       <button onclick="addHandler()">Attach</button>
+       <button onclick="removeHandler()">Detach</button>
+       <hr/>
+
+       
+
+        <script>
+
+            // declare global variables to store start point and endpoint 
+            // with the help of mouse events
+
+            var startPoint={
+                x:0,
+                y:0
+            };
+
+            var oldPoint={
+                x:0,
+                y:0
+            };
+            var endPoint={
+                x:0,
+                y:0
+            };
+
+            var canvas=document.getElementById("canvas");
+
+            //Mouse Event Handlers
+            //Mouse Event Listeners
+            //Mouse Event Callback functions
+
+            function onMouseMove(e){
+
+            var pdemo=document.getElementById("demo");
+             var x = e.clientX;
+             var y = e.clientY;
+             endPoint.x=x;
+             endPoint.y=y;
+
+             var coor = "Coordinates: (" + x + "," + y + ")";
+             pdemo.innerHTML=coor;
+
+             var c = document.getElementById("canvas");
+             var ctx = c.getContext("2d");
+             // draw this line using while color
+            
+
+             // Apply logic for rubber band line effect in mousemove
+
+
+            //draw this line using black color
+            // ctx.moveTo(startPoint.x, startPoint.y);
+            // ctx.lineTo(endPoint.x, endPoint.y);
+             ctx.beginPath();
+             ctx.rect(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+             ctx.stroke();
+
+
+            }
+
+            function onMouseDown(e){
+            
+             var pdemo=document.getElementById("demo");
+             var x = e.clientX;
+             var y = e.clientY;
+             var coor = "Coordinates: (" + x + "," + y + ")";
+             startPoint.x=x;
+             startPoint.y=y;
+             oldPoint=startPoint;
+
+
+             pdemo.innerHTML=coor;
+
+            }
+
+
+            function onMouseUp(e){
+             
+             var pdemo=document.getElementById("demo");
+             var x = e.clientX;
+             var y = e.clientY;
+             endPoint.x=x;
+             endPoint.y=y;
+
+             var coor = "Coordinates: (" + x + "," + y + ")";
+             pdemo.innerHTML=coor;
+
+             var c = document.getElementById("canvas");
+             var ctx = c.getContext("2d");
+             /*ctx.moveTo(startPoint.x, startPoint.y);
+             ctx.lineTo(endPoint.x, endPoint.y);
+             ctx.stroke();*/
+             ctx.beginPath();
+             ctx.rect(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+            }
+
+            //attach event receiver  for event
+            function addHandler(){
+                
+                document.addEventListener("mousemove",onMouseMove);
+                document.addEventListener("mousedown",onMouseDown);
+                document.addEventListener("mouseup",onMouseUp);
+
+                /*canvas.addEventListener("mousemove",myFunction);
+                canvas.addEventListener("mousedown",onMouseDown);
+                canvas.addEventListener("mouseup",onMouseUp);*/
+            };
+
+            //detach event receiver  for event
+            function removeHandler(){
+              
+                document.removeEventListener("mousemove",myFunction);
+                document.removeEventListener("mousedown",onMouseDown);
+                document.removeEventListener("mouseup",onMouseUp);
+               /* canvas.removeEventListener("mousemove",myFunction);
+                canvas.removeEventListener("mousedown",onMouseDown);
+                canvas.removeEventListener("mouseup",onMouseUp);*/
+
+            }
+        </script>
+
+</body>
+</html>

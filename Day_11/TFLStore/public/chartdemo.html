@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Chart</title>
+        <script type="text/javascript" 
+        src="https://www.gstatic.com/charts/loader.js"></script>
+
+    </head>
+    <body>
+        <div id="chart_div"></div>
+
+        <script>
+            google.charts.load('current', {packages: ['corechart', 'bar']});
+            google.charts.setOnLoadCallback(drawMultSeries);
+
+            function drawMultSeries() {
+
+                var data = google.visualization.arrayToDataTable([
+                    ['City', '2020 Population', '2021 Population'],
+                    ['Mumbai, MH', 8175000, 8008000],
+                    ['Delhi, DT', 3792000, 3694000],
+                    ['Surat, GT', 2695000, 2896000],
+                    ['Pune, MH', 2099000, 1953000],
+                    ['Nagpur, MH', 1526000, 1517000]
+                ]);
+
+                var options = {
+                    title: 'Population of Largest  Cities',
+                    //is3D: true,
+                    pieHole: 0.4,
+                    chartArea: {width: '50%'},
+                    hAxis: {
+                    title: 'Total Population',
+                    minValue: 0
+                    },
+                    vAxis: {
+                    title: 'City'
+                    }
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+                }
+
+        </script>
+    </body>
+</html>

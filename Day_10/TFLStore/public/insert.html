@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Insert new Flower</h1>
+        <hr/>
+        <form action="/api/flowers/" method="POST">
+     
+         <table>
+             <tr>
+                 <td><label>Id</label></td>
+                 <td><input type="text" name="id" id="id"/></td>
+             </tr>
+             <tr>
+                <td><label>Image</label></td>
+                <td><input type="text" name="id" id="id"/></td>
+             </tr>
+             <tr>
+                <td><label>Title</label></td>
+                <td><input type="text" name="id" id="id"/></td>
+             </tr>
+             <tr>
+                <td><label>Description</label></td>
+                <td><input type="multiline" name="description" id="description"/></p></td>
+             </tr>
+            <tr>
+                <td><label>Unit Price</label></td>
+                <td><input type="number" name="unitprice" id="unitprice"/></td>
+            </tr>
+            <tr>
+                <td><label>Quantity</label></td>
+                <td><input type="number" name="quantity" id="quantity"/></td>
+            </tr>
+            <tr>
+                <td><label>Likes</label></td>
+                <td><input type="text" name="likes" id="likes"/></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Insert</button></td>
+            </tr>
+         </table>
+        </form>
+        
+        <script>
+           var flower= { 
+                        "id":1,
+                        "title":"Marigold",
+                        "description":"Wedding flower",
+                        "unitprice":12,
+                        "imageurl":"/images/marigold.jpg", 
+                        "quantity":5000,
+                        "likes":45000
+            };
+            
+            //get the references of those paragraph and image elements
+            var id=document.getElementById("id");
+            var title=document.getElementById("title");
+            var description=document.getElementById("description");
+            var unitprice=document.getElementById("unitprice");
+            var quantity=document.getElementById("quantity");
+            var image=document.getElementById("image");
+            var likes=document.getElementById("likes");
+        
+         //set innerHTML of each element by json object key
+           id.innerHTML=flower.id;
+           image.src=flower.imageurl;
+           title.innerHTML=flower.title;
+           unitprice.innerHTML=flower.unitprice;
+           quantity.innerHTML=flower.quantity;
+           likes.innerHTML=flower.likes;
+           description.innerHTML=flower.description;  
+        </script>
+    </body>
+</html>

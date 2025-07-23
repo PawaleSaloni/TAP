@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Transflower Web</Title>
+    </head>
+    <body>
+        <h1>Contact Us </h1>
+        <a href="/">Home</a> | <a href="/about.html">About us</a> |<a href="/contact.html">Contact</a>
+        <hr/>
+
+        <p id="para1">Seed Infotech Ltd.....</p>
+        <p id="para2">Microsoft India Pvt. Ltd....</p>
+        <button onclick="onButtonClick()">Change content</button>
+        <script>
+            var onButtonClick=function(){
+                //DOM
+                //alert("Button is pressed......")
+
+                var element=document.getElementById("para2");
+                element.innerHTML="Transflower Learning Pvt. Ltd."
+
+            }
+        </script>
+
+    </body>
+</html>

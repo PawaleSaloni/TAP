@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Paint Brush </title>
+    </head>
+    <body>
+       
+        <canvas id="canvas" width="300" height="300" style="background-color:azure;"></canvas>
+        <h1 style="color: red;">Transflower Paint Brush</h1>
+        <p style="color:brown;font-size: large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Doing ordinary things extraordinarily</p>
+    
+        <script>
+            // HTML 5.0 Behaviour
+            
+            function drawLine(){
+                //DOM
+                var theCanvas=document.getElementById("canvas");
+                var context=theCanvas.getContext("2d");
+                context.moveTo(10,200);
+                context.lineTo(200,200);
+                context.stroke();
+            }
+
+            function drawRectangle(){
+
+                var theCanvas=document.getElementById("canvas");
+                var context=theCanvas.getContext("2d");
+               // context.fillStyle="blue";
+                context.fillRect(50,50,200,150);
+
+
+            }
+
+            function drawTriangle() {
+
+                var canvas = document.getElementById('canvas');
+                if (canvas.getContext) {
+
+                    var ctx = canvas.getContext('2d');
+
+                    ctx.beginPath();
+                    ctx.moveTo(75, 50);
+                    ctx.lineTo(100, 75);
+                    ctx.lineTo(100, 25);
+                    ctx.fill();
+                }
+            }
+
+
+            function drawCircle(){
+                var canvas = document.getElementById('canvas');
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext('2d');
+                    ctx.beginPath();
+                    ctx.arc(50,50,40,0,2* Math.PI);
+                    ctx.stroke();
+                    //ctx.fill();
+                }
+            }
+           // drawLine();
+           //drawRectangle();
+           //drawTriangle();
+           function drawSmily() {
+                var canvas = document.getElementById('canvas');
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext('2d');
+                    ctx.beginPath();
+                    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+                    ctx.moveTo(110, 75);
+                    ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+                    ctx.moveTo(65, 65);
+                    ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+                    ctx.moveTo(95, 65);
+                    ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+                    ctx.stroke();
+                }
+            }
+           //drawCircle();
+           drawSmily();
+        </script>
+    
+    </body>
+</html>
+
+<!--- 
+      basics
+      syntax,
+      rules
+      keyword
+      using inbuilt library functions
+      searching online 
+      patience to read documentation
+      courage to apply  and solve possible errors
+-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebStorage Demo</title>
+</head>
+
+<body>
+       <h1>Transflower</h1>
+       <hr/>
+
+        <input type="text" id="txtName"/>
+        <button onClick="onSetData()">Set Data</button>
+        <hr/>
+        <div id="result"></div>
+        <script>
+            function onSetData(){
+                //logic for setting data into storage
+                if(typeof(Storage)!=="undefiend"){
+                    
+                    var txtInput=document.getElementById("txtName");
+                    var name=txtInput.value;
+                    localStorage.setItem("person",name);
+
+
+                }
+                else{
+                    var divId=document.getElementById("result");
+                    divId.innerHTML="Sorry, your browser does not support HTML 5 feature :WebStorage"
+                }
+            }
+        </script>
+</body>
+</html>

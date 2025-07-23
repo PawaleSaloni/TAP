@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transflower Store</title>
+</head>
+<body>
+    <!--<button onClick="alert('button is pressed')">click me</button>-->
+    <button id="myBtn">Press me</button>
+    <p id="demo">Hello</p>
+
+    <script>
+        // What is the root node DOM Tree
+        //Document
+        var btn=document.getElementById("myBtn");   
+
+        btn.addEventListener("click", displayDate);
+        document.addEventListener("mousedown",onMouseDown);
+        document.addEventListener("mousemove",onMouseMove);
+        document.addEventListener("mouseup",onMouseUp);
+
+        document.addEventListener("keydown",onKeyDown);
+     
+
+        //Client Side Event Resgister
+        //event handler registration for click event
+        // Event Handlers
+        // Event Recievers
+        // Event Listeners
+
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        };
+
+        function onMouseDown(event){
+            console.log("Mouse Down");
+            var x = event.clientX;
+            var y = event.clientY;
+            var coords =  x + "," + y;
+            document.getElementById("demo").innerHTML =coords;
+        };
+
+        function onMouseUp(event){
+
+            console.log("Mouse UP");
+            var x = event.clientX;
+            var y = event.clientY;
+            var coords =  x + "," + y;
+            document.getElementById("demo").innerHTML =coords;
+        };
+
+        function onMouseMove(event){
+
+            console.log("Mouse Move");
+            var x = event.clientX;
+            var y = event.clientY;
+            var coords =  x + ", " + y;
+            document.getElementById("demo").innerHTML =coords;
+        };
+
+        function onKeyDown(){
+            console.log("Key Down");
+        }
+    </script>
+</body>
+</html>
