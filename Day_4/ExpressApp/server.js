@@ -49,13 +49,13 @@ app.get("/flowers",(request, response)=>{
 app.get("/customers",(request, response)=>{
     var customers=[
         { "id":34,"firstname":"Ravi", "lastname":"Tambade"},
-        { "id":34,"firstname":"Sachin", "lastname":"Nene" }
+        { "id":34,"firstname":"Saloni", "lastname":"Pawale" }
     ];
     response.send(customers);
 })
 app.listen(9000);
 
-console.log("Exress Web application is listening on port no 9000");
+console.log("Express Web application is listening on port no 9000");
 
 //line 6 is syntax for giving path? we can change folder name?
 //and  what express.static mean?
