@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="scripts/jquery.min.js"></script>
+
+    </head>
+    <body>
+            <button id="btn1"> Hide Me</button>
+            <button id="btn2"> Show Me</button>
+            <p id="name"> Ravi Tambade</p>
+            <p id="company"> Transflower Learning Pvt. Ltd</p>
+            <p id="statement"> Mentor as a Service</p>
+            <script>
+               /* var btn=document.getElementById("btnHide");
+                btn.addEventListener("click", function(){
+                    var para=document.getElementById("para");
+                    para.hide();
+                });
+                */
+                $(document).ready(function(){
+                   
+                    //JQuery Event handling
+                    //Event Registration
+
+                    $("#btn1").click(function(){
+                        $("#company").hide();   // DOM manipulation
+                    });
+
+                    $("#btn2").click(function(){
+                        $("#statement").hide();
+                    });
+                });
+            </script>
+    </body>
+</html>
